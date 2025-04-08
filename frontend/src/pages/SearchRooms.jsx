@@ -17,12 +17,22 @@ const SearchRooms = () => {
   }
 
   const handleSearch = async () => {
+    const capitalizedType = roomType.charAt(0).toUpperCase() + roomType.slice(1);
+
     try {
-      const response = await axiosInstance.post('/api/rooms/search', {
-        checkIn,
-        checkOut,
-        roomType,
-      });
+      const response = await axiosInstance.post(
+        '/api/rooms/search',
+        {
+          checkIn,
+          checkOut,
+          roomType: capitalizedType,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
 
       navigate('/results', {
         state: {

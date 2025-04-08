@@ -8,6 +8,7 @@ const roomSchema = new mongoose.Schema({
     {
       checkIn: { type: Date, required: true },
       checkOut: { type: Date, required: true },
+      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
     }
   ]
 });

@@ -7,13 +7,11 @@ const Profile = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    university: '',
     address: '',
   });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch profile data from the backend
     const fetchProfile = async () => {
       setLoading(true);
       try {
@@ -23,7 +21,6 @@ const Profile = () => {
         setFormData({
           name: response.data.name,
           email: response.data.email,
-          university: response.data.university || '',
           address: response.data.address || '',
         });
       } catch (error) {
@@ -71,13 +68,6 @@ const Profile = () => {
           placeholder="Email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full mb-4 p-2 border rounded"
-        />
-        <input
-          type="text"
-          placeholder="University"
-          value={formData.university}
-          onChange={(e) => setFormData({ ...formData, university: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
         <input
