@@ -13,11 +13,12 @@ const Login = () => {
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
       login(response.data);
-      navigate('/tasks');
+      navigate('/search'); // Redirect user to the Search page after login
     } catch (error) {
       alert('Login failed. Please try again.');
     }
   };
+  
 
   return (
     <div className="max-w-md mx-auto mt-20">
