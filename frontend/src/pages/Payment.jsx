@@ -17,7 +17,8 @@ const Payment = () => {
 
   const handleConfirmBooking = async () => {
     try {
-      const response = await axiosInstance.post(
+    //   const response = await axiosInstance.post(
+        await axiosInstance.post(
         '/api/rooms/book',
         {
           roomId: room._id,
