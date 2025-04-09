@@ -65,4 +65,4 @@ Select a meaningful use case for your CRUD operations. We will provide the list,
 * **README.md** with:
 
   * Project setup instructions.
-  * CI/CD pipeline details.
+  * CI/CD pipeline details. Pipeline details
